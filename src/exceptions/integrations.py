@@ -1,4 +1,4 @@
-from exceptions import ServerError
+from exceptions.base import ServerError
 
 
 class SpeechRecognitionError(ServerError):

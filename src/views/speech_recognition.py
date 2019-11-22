@@ -1,10 +1,11 @@
+from exceptions import SpeechRecognitionError
+
 from aiohttp import web
 from aiohttp_apispec import docs
 from aiohttp_apispec import request_schema
 from aiohttp_apispec import response_schema
 
-from exceptions import SpeechRecognitionError
-from integrations.speech_to_text import speech_to_text_handler
+from integrations.speech_to_text import SPEECH_TO_TEXT_HANDLER
 from schemas import SpeechRecognizeRequestSchema
 from schemas import SpeechRecognizeResponseSchema
 
@@ -21,7 +22,7 @@ async def recognize_speech(request):
     :return:
     """
     try:
-        speech_transcription: str = await speech_to_text_handler.recognize_speech(
+        speech_transcription: str = await SPEECH_TO_TEXT_HANDLER.recognize_speech(
             storage_file_path=request['data']['storage_file_path'],
             language_code=request['data']['language_code']
         )
@@ -34,5 +35,5 @@ async def recognize_speech(request):
 
         return web.json_response(validated_text_transcription)
 
-    except Exception as e:
-        raise SpeechRecognitionError()
+    except Exception as exc:
+        raise SpeechRecognitionError() from exc
