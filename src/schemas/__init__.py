@@ -1,7 +1,7 @@
-from .message import MessageCreateRequestSchema
-from .message import MessageCreateResponseSchema
+from .message import SpeechRecognizeRequestSchema
+from .message import SpeechRecognizeResponseSchema
 
 __all__ = [
-    'MessageCreateRequestSchema',
-    'MessageCreateResponseSchema',
+    'SpeechRecognizeRequestSchema',
+    'SpeechRecognizeResponseSchema',
 ]
