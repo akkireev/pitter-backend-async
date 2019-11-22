@@ -1,5 +1,5 @@
-from .message import send_message
+from .speech_recognition import recognize_speech
 
 __all__ = [
-    'send_message',
+    'recognize_speech',
 ]
