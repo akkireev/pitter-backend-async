@@ -5,7 +5,7 @@ from aiohttp_apispec import docs
 from aiohttp_apispec import request_schema
 from aiohttp_apispec import response_schema
 
-from integrations.speech_to_text import SPEECH_TO_TEXT_HANDLER
+from integrations import SPEECH_TO_TEXT_HANDLER
 from schemas import SpeechRecognizeRequestSchema
 from schemas import SpeechRecognizeResponseSchema
 
