@@ -11,3 +11,8 @@ APISPEC_CONF: dict = dict(
     swagger_path='/api/pitter-async/swagger',
     static_path='/api/pitter-async/swagger/static',
 )
+
+# Speech to text integrations
+REMOTE_STORAGE_API_KEY = os.environ['REMOTE_STORAGE_API_KEY']
+REMOTE_STORAGE_TYPE = os.environ['REMOTE_STORAGE_TYPE']
+REMOTE_STORAGE_BUCKET_NAME = os.environ['REMOTE_STORAGE_BUCKET_NAME']

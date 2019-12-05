@@ -1,6 +1,8 @@
 from .base import BaseAppException
 from .base import ServerError
 
+from .integrations import SpeechRecognitionError
+
 
 class Forbidden(ServerError):
     status_code = 403
@@ -46,4 +48,6 @@ __all__ = [
     'MessageSendingException',
     'AccessTokenInvalid',
     'AuthTypeInvalid',
+
+    'SpeechRecognitionError',
 ]
